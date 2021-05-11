@@ -1,46 +1,36 @@
 ﻿using System;
 
-namespace StaticFunction1
+namespace StaticFunction
 {
-     class Program
-    {
+   public class Account  
+    {  
+        public int id;   
+        public String name;  
+        public static float rateOfInterest;  
+        public Account(int id, String name)  
+        {  
+            this.id = id;  
+            this.name = name;  
+        }  
+        static Account()  
+        {  
+            rateOfInterest = 9.5f;  
+        }  
+        public void display()  
+        {  
+            Console.WriteLine(id + " " + name+" "+rateOfInterest);  
+        }  
+   }  
+      class TestEmployee{  
+       public static void Main(string[] args)  
+        {  
+            Account a1 = new Account(101, "Sonoo");  
+            Account a2 = new Account(102, "Mahesh");  
+            a1.display();  
+            a2.display();  
+  
+        }  
+    }  
 
-        public   enum  Seson  {
-            Winter=10,
-            Spring,
-            Summer,
-            Atoumn,
-            Fall
-        };
-         public enum fruits { Apple , Orange, Moango, JackFruits };
-        public static void EnumTraversNames()
-        {
-               foreach (string frt in Enum.GetNames(typeof(fruits)))  
-                 {  
-                     Console.WriteLine(frt);  
-                 } 
-
-        }
-         public static void EnumTraversValues()
-        {
-               foreach (fruits frt in Enum.GetValues(typeof(fruits)))  
-                 {  
-                     Console.WriteLine(frt);  
-                 } 
-
-        }
-           
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            int Sesons1 =(int) Seson.Winter;
-            int Sesons2 =(int) Seson.Spring;
-            int Sesons3 = (int)Seson.Summer;
-            Console.WriteLine("Sesond  = {0} \n Sesons = {1} \n Sesons = {2}",Sesons1,Sesons2 ,Sesons3 );
-             EnumTraversNames();
-             EnumTraversValues();
-
-        }
-    }
 
 }
